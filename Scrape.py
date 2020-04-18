@@ -16,7 +16,8 @@ def open_driver():
 
 def scrape(page, driver):
     driver.get(page)
-    driver.get(driver.find_element_by_xpath("//div[@data-key='tab_about']/a").get_attribute("href"))
+    driver.get(driver.find_element_by_xpath(
+        "//div[@data-key='tab_about']/a").get_attribute("href"))
 
     nazwa = driver.find_element_by_xpath("//a[@class='_64-f']/span").text
 
@@ -34,31 +35,41 @@ def scrape(page, driver):
         print("Brak logo.")
 
     try:
-        url.urlretrieve(driver.find_element_by_xpath("//a[@rel='theater']/div/div").get_attribute("src"), "bg.png")
+        url.urlretrieve(driver.find_element_by_xpath(
+            "//a[@rel='theater']/div/div").get_attribute("src"), "bg.png")
 
     except:
         print("Brak tła.")
 
-    miasto = driver.find_element_by_xpath("//div[@class='_4bl9']/div[2]/span").text.split(",")[0]
-
-    adres = driver.find_element_by_xpath("//div[@class='_4bl9']/div[1]/span").text
+    try:
+        miasto = driver.find_element_by_xpath(
+            "//div[@class='_4bl9']/div[2]/span").text.split(",")[0]
+        adres = driver.find_element_by_xpath(
+            "//div[@class='_4bl9']/div[1]/span").text
+    except:
+        miasto = ""
+        adres = ""
+        print("Brak adresu.")
 
     fb = page
 
     try:
-        ig = driver.find_element_by_xpath("//div[@class='_1xnd']//a[contains(@href,'instagram')]/div").text
+        ig = driver.find_element_by_xpath(
+            "//div[@class='_1xnd']//a[contains(@href,'instagram')]/div").text
         if "/" in ig:
             ig = ig.rsplit("/", 1)[1]
     except NoSuchElementException:
         ig = ""
 
     try:
-        email = driver.find_element_by_xpath("//div[@class='_1xnd']//a[not(@target)]/div").text
+        email = driver.find_element_by_xpath(
+            "//div[@class='_1xnd']//a[not(@target)]/div").text
     except NoSuchElementException:
         email = ""
 
     try:
-        tel = driver.find_element_by_xpath("//div[@class='_3n4o']//div[@class='_50f4']").text.split(" ", 1)[1]
+        tel = driver.find_element_by_xpath(
+            "//div[@class='_3n4o']//div[@class='_50f4']").text.split(" ", 1)[1]
     except NoSuchElementException:
         tel = ""
 

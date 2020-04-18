@@ -84,7 +84,7 @@ def save():
 
 
 window = Tk()
-window.title("Facebook/Samplee Scraper")
+window.title("Facebook Gastronomy Scraper")
 window.resizable(0, 0)
 window.protocol("WM_DELETE_WINDOW", on_closing)
 scraper = Scr.open_driver()
@@ -98,7 +98,8 @@ Label(top, text="Facebook: ").grid(row=0, column=0, padx=5, pady=15)
 fb_input = Entry(top, width=40)
 fb_input.grid(row=0, column=1, padx=5, pady=15)
 
-Button(top, text="Pobierz", width=7, command=scrape).grid(row=0, column=2, padx=5, pady=15)
+Button(top, text="Pobierz", width=7, command=scrape).grid(
+    row=0, column=2, padx=5, pady=15)
 
 images = Frame(window)
 images.grid(row=1, column=1)
@@ -166,4 +167,5 @@ web_input.grid(row=7, column=1, padx=5, pady=5)
 bot = Frame(window)
 bot.grid(row=2, column=0)
 
-Button(bot, text="Zapisz", width=7, command=save).grid(row=0, column=0, padx=5, pady=15)
+Button(bot, text="Zapisz", width=7, command=save).grid(
+    row=0, column=0, padx=5, pady=15)
