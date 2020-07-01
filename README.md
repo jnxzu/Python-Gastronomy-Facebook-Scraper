@@ -1,2 +1,2 @@
-# Python Samplee Scraper
- Webscarping to speed up date input in the Samplee startup database.
+# Python Gastronomy Facebook Scarper
+Custom tool for automating data input created for the [Finebite](https://finebite.co/pl/) control panel.
