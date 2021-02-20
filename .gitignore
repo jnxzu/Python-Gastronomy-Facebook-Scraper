@@ -1,0 +1,9 @@
+*.xml
+*.pyc
+*.exe
+*.log
+logo.jpg
+bg.png
+.idea/Samplee Facebook Scraper.iml
+.vscode
+__pycache__
