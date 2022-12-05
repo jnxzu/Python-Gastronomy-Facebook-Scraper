@@ -2,6 +2,7 @@ import time
 
 from selenium import webdriver
 
+# set your own
 logo_path = "C:\\Users\\xsero\\Desktop\\Projekty\\Python - Gastronomy Facebook Scraper\\logo.jpg"
 bg_path = "C:\\Users\\xsero\\Desktop\\Projekty\\Python - Gastronomy Facebook Scraper\\bg.png"
 
